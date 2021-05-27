@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/estilos.css">
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+    <div class="container_principal d-flex flex-wrap">
+       
+        <section class="container_search position-relative">
+            <!--------------------------------------------->
+            <article class="section_search text-center position-abolute">
+                <div class="box_buttons mt-3  d-flex justify-content-around align-items-center">
+                    <buttons class="btn_search text-white p-2" id="btn_for_places">Search For Places</buttons>
+                    <span class="icon_location text-white rounded-full d-flex justify-content-center align-items-center"><i class="fas fa-location "></i></span>
+                </div>
+               <div class="info_clima" id="info_clima"></div>
+            </article>
+
+             <!----------------formularios de busqueda :S----------------------------->
+            <article class="article_search position-absolute invisible" id="panel_search">
+                <div class="icon_close mb-5 text-white" ><i class="fas fa-times" id="btn_close_search"></i></div>
+                <form class="form_search m-auto d-flex justify-content-around">
+                    <input type="text" class="input p-1 text-white" id="input_search" placeholder="Search">
+                    <button class=" d-block btn_search_form text-white p-1" id="btn_form_search">Search</button>
+                </form>
+    
+            </article>
+        </section>
+        
+        <!-----------------------------clima en los proximos dias :S------------------->
+        <div class="section_container_info pt-4">
+            <section class="container_information mb-3 d-flex justify-content-around text-center pt-3 flex-wrap" id="section_clima_days">
+            <article class="climas mb-3">
+                <p class="clima_day">Tomorro</p>
+                 <img src="img/icono.png" class="icon_day icon1" alt="">
+                <p><span class="txt_temperatura1">16c</span><span class="temperatura_min">14c</span></p>
+            </article>
+            <article class="climas mb-3">
+                <p class="clima_day">Tomorro</p>
+                 <img src="img/icono.png" class="icon_day icon2" alt="">
+                <p><span class="txt_temperatura2">20c</span><span class="temperatura_min">15c</span></p>
+            </article>
+            <article class="climas mb-3">
+                <p class="clima_day">Tomorro</p>
+                 <img src="img/icono.png" class="icon_day icon3" alt="">
+                <p><span class="txt_temperatura3">10c</span><span class="temperatura_min">25c</span></p>
+            </article>
+            <article class="climas mb-3">
+               <p class="clima_day">Tomorro</p>
+                 <img src="img/icono.png" class="icon_day icon4" alt="">
+                <p><span class="txt_temperatura4">25</span><span class="temperatura_min">20c</span></p>
+            </article>
+            <article class="climas mb-3">
+               <p class="clima_day">Tomorro</p>
+                 <img src="img/icono.png" class="icon_day icon5" alt="">
+                <p><span class="txt_temperatura5">25c</span><span class="temperatura_min">15</span></p>
+            </article>
+        </section>
+        
+        <!------------lo más destacado de hoy-------------------------------->
+        <section class="destacados m-auto">
+           <h1 class=" fs-5 w-100 text-white">Todays'Hightlights</h1>
+            <article id="todays_Hightlights" class="border d-flex justify-content-between flex-wrap">
+                <article class="box_climas p-2 mb-3">
+                    <p>Wind Status</p>
+                    <p><span class="number_wind fs-1 fw-bold">7</span><span class="text_wind fs-4">mph</span></p>
+                    <p><i class="icon_box"></i><span>wsw</span></p>
+                </article>
+                <article class="box_climas p-1 mb-3">
+                    <p>Humidity</p>
+                    <p class="fw-bold fs-1 humidty_percentage">84<span class="fs-5">%</span></p>
+                    <div class="box_progress m-auto">
+                        <p class="number_barra m-auto d-flex justify-content-between"><span>0</span><span>50</span><span>100</span></p>
+                        <div class="bar_progreso bg-white rounded m-auto">
+                            <span class="progreso p-1 rounded" id="progreso"></span>
+                        </div>
+                        <p class="text-end signo m-auto">%</p>
+                    </div>
+                </article>
+                <article class="box_climas p-1 mb-3">
+                    <p>Visibility</p>
+                    <p ><span class="fs-1 fw-bold">6,4</span> <span>miles</span></p>
+                </article>
+                <article class="box_climas p-1 mb-3">
+                    <p>Air Pressure</p>
+                    <p><span class="fs-1 fw-bold">998</span><span>mb</span></p>
+                </article>
+            </article>
+        </section>
+        </div>
+    </div>
+
+    <template id="template_today">
+        <img src="" class="icon_clima m-auto mt-5 mb-5 d-block icon1" alt="">
+        <p class="temperatura mb-3"><span class="txt_temperatura1">15</span><span class="signo_temperatura fs-3">°c</span></p>
+        <p class="shower mb-3 name_weather">Shower</p>
+        <div class="information d-flex justify-content-between m-auto">
+            <p class="today">Today</p>
+            <p class="date">Fri 5 Jun</p>
+        </div>
+        <p class="text-center"><i class="fas fa-map-marker-alt"></i><span id="city" class="city">Chiclayo</span></p> 
+    </template>
+
+    <template id="template_next_days">
+        <article class="climas mb-3">
+            <p class="clima_day">Tomorro</p>
+             <img src="img/icono.png" class="icon_day icon2" alt="">
+            <p class=" d-flex justify-content-around"><span class="txt_temperatura2">16c</span><span class="temperatura_min">14c</span></p>
+        </article>
+        <article class="climas mb-3">
+            <p class="clima_day">Tomorro</p>
+             <img src="img/icono.png" class="icon_day icon3" alt="">
+            <p class="d-flex justify-content-around"><span class="txt_temperatura3">20c</span><span class="temperatura_min">15c</span></p>
+        </article>
+        <article class="climas mb-3">
+            <p class="clima_day">Tomorro</p>
+             <img src="img/icono.png" class="icon_day icon4" alt="">
+            <p class="d-flex justify-content-around"><span class="txt_temperatura4">10c</span><span class="temperatura_min">25c</span></p>
+        </article>
+        <article class="climas mb-3">
+           <p class="clima_day">Tomorro</p>
+             <img src="img/icono.png" class="icon_day icon5" alt="">
+            <p class="d-flex justify-content-around"><span class="txt_temperatura5">25</span><span class="temperatura_min">20c</span></p>
+        </article>
+        <article class="climas mb-3">
+           <p class="clima_day">Tomorro</p>
+             <img src="img/icono.png" class="icon_day icon6" alt="">
+            <p class="d-flex justify-content-around"><span class="txt_temperatura6">25c</span><span class="temperatura_min">15</span></p>
+        </article>
+    </template>
+
+    <template id="template_outstanding">
+        <article class="box_climas p-2 mb-3">
+            <p>Wind Status</p>
+            <p><span class="number_wind fs-1 fw-bold">7</span><span class="text_wind fs-4">mph</span></p>
+            <p><i class="icon_box"></i><span class="wind_direction">wsw</span></p>
+        </article>
+        <article class="box_climas p-1 mb-3">
+            <p>Humidity</p>
+            <p class="fw-bold fs-1 "><span class="humidty_percentage"></span><span class="fs-5">%</span></p>
+            <div class="box_progress m-auto">
+                <p class="number_barra m-auto d-flex justify-content-between"><span>0</span><span>50</span><span>100</span></p>
+                <div class="bar_progreso bg-white rounded m-auto">
+                    <span class="progreso p-1 rounded" id="progreso"></span>
+                </div>
+                <p class="text-end signo m-auto">%</p> 
+            </div>
+        </article>
+        <article class="box_climas p-1 mb-3">
+            <p>Visibility</p>
+            <p ><span class="fs-1 fw-bold visibility">6,4</span> <span>miles</span></p>
+        </article>
+        <article class="box_climas p-1 mb-3">
+            <p>Air Pressure</p>
+            <p><span class="fs-1 fw-bold air_pressure">998</span><span>mb</span></p>
+        </article>
+    </template>
+
+    <script src="Js/App.js"></script>
+</body>
+</html>

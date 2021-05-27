@@ -1,0 +1,189 @@
+body{
+    margin: 0;  
+    background-color: #333 !important;
+}
+*{
+    box-sizing: border-box;
+}
+.container_principal{
+    width: 90%;
+    margin: 40px auto;
+}
+.icon_close{
+    padding:10px 14px 0 0;
+    font-size: 1.2em;
+    text-align: right
+}
+.container_search{
+    background-color:#1E213A;
+    width: 350px;
+}
+.section_search{
+    height: 550px;
+    width:100%;
+    color: #ccc;
+}
+.box_buttons{
+    height:50px;
+    width: 100%;
+}
+.btn_search{
+    color: #fff;
+    border: none;
+    font-family: sans-serif;
+    background-color: #6E707A;
+    cursor: pointer;
+}
+.icon_location{
+    display: block;
+    background-color: #6E707A;
+    color: #fff;
+    height:30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.icon_clima{
+    height:130px;
+    width: 130px;
+}
+.temperatura{
+    font-size:4.3em ;
+}
+.information{
+  width: 170px;
+    
+}
+.shower{
+    font-size: 1.5em;
+}
+.today,day{
+    font-size: 1.1em;
+}
+
+/****************************************/
+
+.article_search{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color:#1E213A;
+    color: #fff;
+}
+form{
+    width: 280px;
+    height: 35px;
+}
+.input{
+    width: 180px;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color:#1E213A;
+}
+.btn_search_form{
+    border: none;
+    background-color: #3C47E9;
+    height: 100%;
+    width: 70px;
+}
+.btn_city{
+    display: block;
+    width: 75%;
+    padding: 8px;
+    outline: none;
+    outline: none;
+     background-color:#1E213A;
+}
+
+/************************************************/
+.section_container_info{
+    width: 750px;
+    background-color: #100E1D;
+}
+.container_information{
+   margin: auto;
+    width: 83%;
+    
+}
+.climas{
+    height: 120px;
+    width: 100px;
+    background-color: #1E213A;
+    color: #ccc;
+}
+.icon_day{
+    height: 30px;
+    width: 30px;
+}
+
+/********************************************************/
+.destacados{
+    width:80%;
+   
+}
+#todays_Hightlights{
+width: 100%;
+}
+.box_climas{
+    background-color: #1E213A;
+    color: #fff;
+    text-align: center;
+    width: 250px;
+    height: 180px;
+}
+.number_barra{
+    width:75%;
+}
+.bar_progreso{
+    width: 75%;
+    
+}
+.progreso{
+    display: block;
+    background-color: #FFEC65;
+    width: 66%;
+}
+
+.signo{
+    width: 70%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
