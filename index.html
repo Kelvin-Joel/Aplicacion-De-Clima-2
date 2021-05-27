@@ -22,14 +22,15 @@
 <body>
     <div class="container_principal d-flex flex-wrap">
        
-        <section class="container_search position-relative">
+        <div class="container_search position-relative">
             <!--------------------------------------------->
             <article class="section_search text-center position-abolute">
                 <div class="box_buttons mt-3  d-flex justify-content-around align-items-center">
                     <buttons class="btn_search text-white p-2" id="btn_for_places">Search For Places</buttons>
                     <span class="icon_location text-white rounded-full d-flex justify-content-center align-items-center"><i class="fas fa-location "></i></span>
                 </div>
-               <div class="info_clima" id="info_clima"></div>
+                <!---seccion donde agregaremos los datos del clima del dia actual-->
+               <div class="info_clima" id="current_DayData"></div>
             </article>
 
              <!----------------formularios de busqueda :S----------------------------->
@@ -41,33 +42,33 @@
                 </form>
     
             </article>
-        </section>
+        </div>
         
         <!-----------------------------clima en los proximos dias :S------------------->
         <div class="section_container_info pt-4">
-            <section class="container_information mb-3 d-flex justify-content-around text-center pt-3 flex-wrap" id="section_clima_days">
-            <article class="climas mb-3">
-                <p class="clima_day">Tomorro</p>
+            <section class="container_information mb-3 d-flex justify-content-around text-center pt-3 flex-wrap" id="section_weather_days">
+            <article class="weather mb-3">
+                <p class="weather_day">Tomorro</p>
                  <img src="img/icono.png" class="icon_day icon1" alt="">
                 <p><span class="txt_temperatura1">16c</span><span class="temperatura_min">14c</span></p>
             </article>
-            <article class="climas mb-3">
-                <p class="clima_day">Tomorro</p>
+            <article class="weather mb-3">
+                <p class="weather_day">Tomorro</p>
                  <img src="img/icono.png" class="icon_day icon2" alt="">
                 <p><span class="txt_temperatura2">20c</span><span class="temperatura_min">15c</span></p>
             </article>
-            <article class="climas mb-3">
-                <p class="clima_day">Tomorro</p>
+            <article class="weather mb-3">
+                <p class="weather_day">Tomorro</p>
                  <img src="img/icono.png" class="icon_day icon3" alt="">
                 <p><span class="txt_temperatura3">10c</span><span class="temperatura_min">25c</span></p>
             </article>
-            <article class="climas mb-3">
-               <p class="clima_day">Tomorro</p>
+            <article class="weather mb-3">
+               <p class="weather_day">Tomorro</p>
                  <img src="img/icono.png" class="icon_day icon4" alt="">
                 <p><span class="txt_temperatura4">25</span><span class="temperatura_min">20c</span></p>
             </article>
-            <article class="climas mb-3">
-               <p class="clima_day">Tomorro</p>
+            <article class="weather mb-3">
+               <p class="weather_day">Tomorro</p>
                  <img src="img/icono.png" class="icon_day icon5" alt="">
                 <p><span class="txt_temperatura5">25c</span><span class="temperatura_min">15</span></p>
             </article>
@@ -77,27 +78,27 @@
         <section class="destacados m-auto">
            <h1 class=" fs-5 w-100 text-white">Todays'Hightlights</h1>
             <article id="todays_Hightlights" class="border d-flex justify-content-between flex-wrap">
-                <article class="box_climas p-2 mb-3">
+                <article class="weather_box p-2 mb-3">
                     <p>Wind Status</p>
                     <p><span class="number_wind fs-1 fw-bold">7</span><span class="text_wind fs-4">mph</span></p>
                     <p><i class="icon_box"></i><span>wsw</span></p>
                 </article>
-                <article class="box_climas p-1 mb-3">
+                <article class="weather_box p-1 mb-3">
                     <p>Humidity</p>
                     <p class="fw-bold fs-1 humidty_percentage">84<span class="fs-5">%</span></p>
-                    <div class="box_progress m-auto">
-                        <p class="number_barra m-auto d-flex justify-content-between"><span>0</span><span>50</span><span>100</span></p>
+                    <div class="box_progress_bar m-auto">
+                        <p class="number_bar m-auto d-flex justify-content-between"><span>0</span><span>50</span><span>100</span></p>
                         <div class="bar_progreso bg-white rounded m-auto">
                             <span class="progreso p-1 rounded" id="progreso"></span>
                         </div>
                         <p class="text-end signo m-auto">%</p>
                     </div>
                 </article>
-                <article class="box_climas p-1 mb-3">
+                <article class="weather_box p-1 mb-3">
                     <p>Visibility</p>
                     <p ><span class="fs-1 fw-bold">6,4</span> <span>miles</span></p>
                 </article>
-                <article class="box_climas p-1 mb-3">
+                <article class="weather_box p-1 mb-3">
                     <p>Air Pressure</p>
                     <p><span class="fs-1 fw-bold">998</span><span>mb</span></p>
                 </article>
@@ -118,40 +119,40 @@
     </template>
 
     <template id="template_next_days">
-        <article class="climas mb-3">
-            <p class="clima_day">Tomorro</p>
+        <article class="weather mb-3">
+            <p class="weather_day">Tomorro</p>
              <img src="img/icono.png" class="icon_day icon2" alt="">
             <p class=" d-flex justify-content-around"><span class="txt_temperatura2">16c</span><span class="temperatura_min">14c</span></p>
         </article>
-        <article class="climas mb-3">
-            <p class="clima_day">Tomorro</p>
+        <article class="weather mb-3">
+            <p class="weather_day">Tomorro</p>
              <img src="img/icono.png" class="icon_day icon3" alt="">
             <p class="d-flex justify-content-around"><span class="txt_temperatura3">20c</span><span class="temperatura_min">15c</span></p>
         </article>
-        <article class="climas mb-3">
-            <p class="clima_day">Tomorro</p>
+        <article class="weather mb-3">
+            <p class="weather_day">Tomorro</p>
              <img src="img/icono.png" class="icon_day icon4" alt="">
             <p class="d-flex justify-content-around"><span class="txt_temperatura4">10c</span><span class="temperatura_min">25c</span></p>
         </article>
-        <article class="climas mb-3">
-           <p class="clima_day">Tomorro</p>
+        <article class="weather mb-3">
+           <p class="weather_day">Tomorro</p>
              <img src="img/icono.png" class="icon_day icon5" alt="">
             <p class="d-flex justify-content-around"><span class="txt_temperatura5">25</span><span class="temperatura_min">20c</span></p>
         </article>
-        <article class="climas mb-3">
-           <p class="clima_day">Tomorro</p>
+        <article class="weather mb-3">
+           <p class="weather_day">Tomorro</p>
              <img src="img/icono.png" class="icon_day icon6" alt="">
             <p class="d-flex justify-content-around"><span class="txt_temperatura6">25c</span><span class="temperatura_min">15</span></p>
         </article>
     </template>
 
     <template id="template_outstanding">
-        <article class="box_climas p-2 mb-3">
+        <article class="weather_box p-2 mb-3">
             <p>Wind Status</p>
             <p><span class="number_wind fs-1 fw-bold">7</span><span class="text_wind fs-4">mph</span></p>
             <p><i class="icon_box"></i><span class="wind_direction">wsw</span></p>
         </article>
-        <article class="box_climas p-1 mb-3">
+        <article class="weather_box p-1 mb-3">
             <p>Humidity</p>
             <p class="fw-bold fs-1 "><span class="humidty_percentage"></span><span class="fs-5">%</span></p>
             <div class="box_progress m-auto">
@@ -162,16 +163,17 @@
                 <p class="text-end signo m-auto">%</p> 
             </div>
         </article>
-        <article class="box_climas p-1 mb-3">
+        <article class="weather_box p-1 mb-3">
             <p>Visibility</p>
             <p ><span class="fs-1 fw-bold visibility">6,4</span> <span>miles</span></p>
         </article>
-        <article class="box_climas p-1 mb-3">
+        <article class="weather_box p-1 mb-3">
             <p>Air Pressure</p>
             <p><span class="fs-1 fw-bold air_pressure">998</span><span>mb</span></p>
         </article>
     </template>
 
-    <script src="Js/App.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="Js/App.js" type="module"></script>
 </body>
 </html>

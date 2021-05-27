@@ -1,18 +1,20 @@
+import {ocultar_section_search,Mostrar_SeccionPrincipal} from './OverflowElements.js'
+/***import {AddData1, Add_data2} from './AddData'***/
+
 const btn_for_places = document.getElementById("btn_for_places");
 const btn_close_search = document.getElementById("btn_close_search");
-const icon_img_clima = document.getElementById("icon_img_clima");
-const number_temperatura = document.getElementById("number_temperatura");
 const btn_form_search = document.getElementById("btn_form_search");
 const fragment = document.createDocumentFragment();
-const info_clima = document.getElementById("info_clima");
-const panel_search = document.getElementById("panel_search");
-const section_clima_days = document.getElementById("section_clima_days");
+const current_DayData = document.getElementById("current_DayData");
+const section_weather_days = document.getElementById("section_weather_days");
 const template_today = document.getElementById("template_today").content;
 const template_next_days =document.getElementById("template_next_days").content;
 const todays_Hightlights = document.getElementById("todays_Hightlights");
 const progress = document.getElementById("progreso");
 const template_outstanding = document.getElementById("template_outstanding").content;
-const elementos=document.getElementById('contenedores elementores')
+/* const panel_search = document.getElementById("panel_search"); */
+/* const icon_img_clima = document.getElementById("icon_img_clima");
+const number_temperatura = document.getElementById("number_temperatura"); */
 
 /*******aqui llamamos a nuestra funcion que hara el llamado a la api :S*/
 btn_form_search.addEventListener("click", (e) => {
@@ -23,17 +25,20 @@ btn_form_search.addEventListener("click", (e) => {
 
 //const url='https://cors.bridged.cc/https://www.metaweather.com/api/location/search/?query=lima'
 
-//********obeniendo codigo del pais desde la api :S */
+//********obeniendo codigo del pais desde la api*/
 const GetDatosApis = async () => {
   const input_search = document.getElementById("input_search").value;
+ try {
   const getdatos = await fetch(`https://cors.bridged.cc/https://www.metaweather.com/api/location/search/?query=${input_search}`);
   const results = await getdatos.json();
   let woeid = results[0].woeid;
   GetInfoClima(woeid);
-  console.log(woeid);
+ } catch (error) {
+  swal("Oucrrio Un Error!", "No Pudimos Encontrar Los Datos!", "error");
+ }
 };
 
-/********obteniendo datos de la ciuda de su clima :S */
+/********obteniendo datos de la ciuda de su clima*/
 const GetInfoClima = async (index) => {
 
   const getinfo = await fetch(`https://cors.bridged.cc/https://www.metaweather.com/api/location/${index}/`);
@@ -45,6 +50,7 @@ const GetInfoClima = async (index) => {
   let valor5 = results2.consolidated_weather[4].weather_state_abbr;
   let valor6 = results2.consolidated_weather[5].weather_state_abbr;
 
+  /***capturo los datos del clima del dia actual,icono pais temperatura */
   const ObjeDatos1 = {
     img1: `https://www.metaweather.com/static/img/weather/${valor1}.svg`,
     min_temp1: Math.round(results2.consolidated_weather[0].min_temp),
@@ -53,6 +59,7 @@ const GetInfoClima = async (index) => {
     applicable_date:results2.consolidated_weather[0].applicable_date
   };
   
+  /***capturo los datos del clima de los dias siguientes,iconos temperatura ect */
   const ObjeDatos2 = {
     img2: `https://www.metaweather.com/static/img/weather/${valor2}.svg`,
     img3: `https://www.metaweather.com/static/img/weather/${valor3}.svg`,
@@ -73,13 +80,13 @@ const GetInfoClima = async (index) => {
 
   let value_humidity = ObjeDatos2.humidity;
   progress.style.width = `${value_humidity}%`;
-  llenando_datos1(ObjeDatos1);
-  llenando_datos2(ObjeDatos2);
+  Add_data1(ObjeDatos1);
+  Add_data2(ObjeDatos2);
 };
 
-/*****************llenando los datos del clima del dia actual :S******************** */
-const llenando_datos1 = (index) => {
-  info_clima.innerHTML = "";
+/*****************llenando los datos del clima del dia actual******************** */
+export const Add_data1 = (index) => {
+  current_DayData.innerHTML = "";
   template_today.querySelector(".icon1").setAttribute("src", index.img1);
   template_today.querySelector(".txt_temperatura1").textContent =index.min_temp1;
   template_today.querySelector(".city").textContent = index.city;
@@ -87,12 +94,12 @@ const llenando_datos1 = (index) => {
   template_today.querySelector(".date").textContent =index.applicable_date;
   const clone = template_today.cloneNode(true);
   fragment.appendChild(clone);
-  info_clima.appendChild(fragment);
+  current_DayData.appendChild(fragment);
 };
 
-/******llenando informacion del clima de los proximos dias :S */
-const llenando_datos2 = (index) => {
-  section_clima_days.innerHTML = "";
+/******llenando informacion del clima de los proximos dias*/
+export const Add_data2 = (index) => {
+  section_weather_days.innerHTML = "";
   todays_Hightlights.innerHTML = "";
 
   template_next_days.querySelector(".icon2").setAttribute("src", index.img2);
@@ -117,9 +124,10 @@ const llenando_datos2 = (index) => {
   const clone2 = template_outstanding.cloneNode(true);
   fragment.appendChild(clone);
   fragment.appendChild(clone2);
-  section_clima_days.appendChild(fragment);
+  section_weather_days.appendChild(fragment);
   todays_Hightlights.appendChild(fragment);
 };
+
 
 /***funcion para animar el termometro :S */
 const bar_progress = (index) => {
@@ -137,16 +145,4 @@ btn_close_search.addEventListener("click", () => {
   Mostrar_SeccionPrincipal()
 });
 
-/**ocultamos la seccion donde mostraremos los datos del clima del dia actual**/
-const ocultar_section_search = () => {
-  if (panel_search.classList.contains("invisible")) {
-    panel_search.classList.replace("invisible", "visible");
-  }
-};
 
-/***ocultamos la seccion de la busqueda*/
-const Mostrar_SeccionPrincipal = () => {
-  if (panel_search.classList.contains("visible")) {
-    panel_search.classList.replace("visible", "invisible");
-  }
-};
