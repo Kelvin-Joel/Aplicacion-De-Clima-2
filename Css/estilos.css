@@ -104,7 +104,7 @@ form{
     width: 83%;
     
 }
-.climas{
+.weather{
     height: 120px;
     width: 100px;
     background-color: #1E213A;
@@ -117,35 +117,54 @@ form{
 
 /********************************************************/
 .destacados{
-    width:80%;
-   
+    width:80%; 
 }
 #todays_Hightlights{
 width: 100%;
 }
-.box_climas{
+.weather_box{
     background-color: #1E213A;
     color: #fff;
     text-align: center;
     width: 250px;
     height: 180px;
 }
-.number_barra{
+.number_bar{
     width:75%;
 }
 .bar_progreso{
-    width: 75%;
-    
+    width: 75%;  
 }
 .progreso{
     display: block;
     background-color: #FFEC65;
     width: 66%;
 }
-
 .signo{
     width: 70%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
